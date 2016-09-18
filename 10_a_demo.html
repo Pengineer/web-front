@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>a标签 Demo</title>
+    <style type="text/css">
+        #box {
+            width:600px;
+            font-family:"宋体";
+            margin-top: 20px;
+        }
+        #title {height:31px; line-height: 27px; font-size:15px; }
+        #title_a {color:#00C; }  /*a标签不认父标签的颜色样式*/
+        #title_span {color:#C00; text-decoration: underline;} /*下环线颜色是跟着标签走的，阿里云三个字的下划线就默认跟着a标签了，这里单独给span加一个下划线，这个下划线颜色就跟着span标签*/
+    </style>
+
+    <!--
+        a标签里面不能再包含a标签
+        a标签里面放置div标签，会使得文字折行显示，为了实现对一行中不同部分的文件进行样式设置，可以使用span标签，span标签没有特殊的含义，需要用来区分样式
+    -->
+</head>
+<body>
+    <div id="box">
+        <div id="title"><a href="http://www.aliyun.com" id="title_a"><span id="title_span">阿里云</span>-云计算的价值</a></div>
+        <div id="content">阿里云,全球领先的云计算服务平台,云计算第一平台,云产品解决方案,享多线独享带宽,开发者合作平台,站长云集平台,为了无法计算的价值...</div>
+        <div id="link">
+            <a href="#">promotion.aliyun.com/</a>
+            <a href="#">百度快照</a>
+            <a href="#">230条评价</a>
+        </div>
+    </div>
+</body>
+</html>

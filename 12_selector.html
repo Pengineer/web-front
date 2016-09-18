@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CSS 选择器</title>
+
+    <style>
+        #div1 {width:200px; height:200px; background-color:red; border:1px solid #000;}
+        .p1 {width:100px; height:100px; background-color: yellow; border:1px solid #fff;}
+        span {color:red; font:20px/30px "宋体";}
+        #div2 {width:200px; height:200px; background-color: blue; border:1px solid #000;}
+
+        .div3 {width:200px; height:200px; background-color: gray}
+        .div4 {border:2px solid red; margin:10px;}
+
+        #div5 p {color:blue; font:30px/50px "宋体";}
+
+        .s1:hover {/*:hover 选择器用于选择鼠标指针浮动在上面的元素*/
+            color: red;
+        }
+
+        /*
+           id是标签的唯一标识符，而不同的标签可以有相同的class，一个标签还可以有多个class
+
+           优先级：行间样式 > id选择器 > 类选择器（class） > 类型选择器（标签） > 通配符（*）
+         */
+    </style>
+</head>
+<body>
+    <div id="div1">div1</div>
+    <p class="p1">p1</p>
+    <p class="p1">p2</p>
+    <div id="div2">div2</div>
+    <div class="div3 div4">div3 div4</div>  <!--同一个标签可以有多个class，中间用空格隔开-->
+
+    <span>选择器</span>
+
+    <div id="div5">
+        <p>包含选择器</P>
+    </div>
+
+    <span class="s1">123</span>
+    <span class="s1">456</span>
+</body>
+</html>

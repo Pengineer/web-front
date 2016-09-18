@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>border demo</title>
+    <style>
+        #div1 {
+            width:200px;
+            height:200px;
+            /*复合标签*/
+            border:1px solid red;/*在不同的浏览器下，第一个参数值不同会看出显示效果的差异性*/
+        }
+
+        #div2 {
+            width:200px;
+            height:200px;
+            /*可以单独设定边框的各部分*/
+            border-top: 5px dotted red;
+            border-left: 5px dashed green;
+            border-bottom: 5px dashed blue;
+            border-right: 5px dotted yellow;
+        }
+    </style>
+</head>
+    <body>
+        <div id="div1"></div>
+        <div id="div2"></div>
+    </body>
+</html>

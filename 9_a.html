@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>a标签</title>
+    <base target="_blank" href="http://www.baidu.com"/>
+
+    <!--
+    a 链接：
+    如果是页面地址或则文件，则直接跳转并渲染。
+    如果是压缩包，则下载。
+
+    href如果写是id，点击之后会直接跳转到id所在的位置 ———— 锚点
+
+    target属性：_blank新窗口打开  |  _self当前窗口打开
+
+    base标签可以定义本文件下a标签的链接地址前缀和链接打开的方式，如果某个a标签不想使用上面的默认地址，这需要在地址前将http补充完整
+
+     -->
+
+     <style>
+        #div1 {
+            width:200px;
+            height:100px;
+            margin-bottom:500px;
+            background-color: red;
+            border:1px solid;
+        }
+        #div2 {
+            width:200px;
+            height:100px;
+            margin-bottom:500px;
+            background-color: blue;
+            border:1px solid;
+        }
+        #div3 {
+            width:200px;
+            height:100px;
+            margin-bottom:500px;
+            background-color: yellow;
+            border:1px solid;
+        }
+     </style>
+</head>
+<body>
+    <a href="http://www.baidu.com">百度一下</a>
+    <a href="document/1.txt">文件渲染</a>  <!--由于base的存在，此处失效-->
+    <a href="document/1.rar">文档下载</a>
+    <br>
+
+    <a href="#div1">div1</a>
+    <a href="#div2">div2</a>
+    <a href="#div3">div3</a>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+
+    <a href="http://www.sohu.com/#div_title">搜狐搜索</a>
+</body>
+</htm<!--

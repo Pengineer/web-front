@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>背景</title>
+    <style>
+        /*单一样式：单一键值对*/
+        #div1 {
+            width:600px;
+            height:400px;
+            /*三种颜色设置方式：关键字；rgb；十六进制（六位或者三位-三位是六位的简写，两位两位相同时才可以简写）*/
+            background-color:#3CC;
+            /*背景图片的层级用于高于背景颜色*/
+            background-image:url(http://h.hiphotos.baidu.com/zhidao/wh%3D450%2C600/sign=9df99d86b5de9c82a630f18b59b1ac3c/e850352ac65c10385ce2b77db4119313b17e89f4.jpg);
+            /*默认情况下，background-image指定的背景图片会平铺，为了防止平铺，可作如下操作*/
+            background-repeat: no-repeat;
+            /*背景定位: x y , 可以设置具体的值，或则百分比，或则语义指定如left|center|right top|center|bottom*/
+            background-position:20px 40px;
+
+        }
+
+        /*复合样式*/
+        #div2 {
+            width:800px;
+            height:400px;
+            background:#3CC url(http://img.pconline.com.cn/images/upload/upc/tx/itbbs/1402/27/c4/31612517_1393474458218_mthumb.jpg) no-repeat center 0px;
+        }
+
+        body {
+            height:8000px;
+            background-color:#f1f1f1;
+            background-image:url(image/image1.jpg);
+            background-repeat: no-repeat;
+            /*给背景设置滚动或则固定fixed|scroll|inherit*/
+            background-attachment:fixed;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">内部样式表</div>
+    <div id="div2" />
+</body>
+</html>
