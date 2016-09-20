@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>position absolute</title>
+    <style>
+        /*设置body的样式是为了避免绝对定位时body的影响*/
+        body{
+            /*方式一：margin:0px;*/
+            /*方式二：*/position: relative;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+        }
+        #div1 {
+            background-color: red;
+        }
+        #div2 {
+            background-color: blue;
+            position: absolute;
+            top: 200px;
+            left:200px;
+        }
+        #div3 {
+            background-color: green;
+        }
+
+        /*
+        position:absolute; 绝对定位
+            将对象从文档流中拖出，使用left，right，top，bottom等属性进行绝对定位。而其层叠通过css z-index属性定义。此时对象不具有边距，但仍有补白和边框
+            a,使元素完全脱离文档流；
+            b,使内嵌支持宽高；
+            c,块属性标签内容撑开宽度；
+            d,如果有定位父级相对于定位父级发生偏移，没有定位父级相对于document发生偏移；
+            e,相对定位一般都是配合绝对定位使用；
+            f,提升层级。
+
+            绝对定位使用通常是父级定义position:relative定位，子级定义position:absolute绝对定位属性，并且子级使用left或right和top或bottom进行绝对定位。
+         */
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+</body>
+</html>

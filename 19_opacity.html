@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>透明度</title>
+    <style type="text/css">
+        div {
+            width: 300px;
+            height: 300px;
+        }
+        .box {
+            margin: 100px auto;
+            position: relative;  /*因为子标签有偏移的存在*/
+        }
+        .content {
+            position: absolute;  /*因为父级定义了相对，因此此处是相对父级的绝对定位（否则就是相对document了）*/
+            left: -5px;
+            top: -5px;
+            background-color: blue;
+            z-index: 1;          /*由于后面的层级会覆盖前面的层级，因此，此处需要提升1个层级*/
+        }
+        .mark {
+            position: absolute;  /*因为父级定义了相对，因此此处是相对父级的绝对定位（否则就是相对document了）*/
+            right: -5px;
+            bottom: -5px;
+            background-color: black;
+            opacity: 0.5;
+        }
+
+    /*
+        标准不透明度：opacity（0~1）
+        如果给父类加了透明度，那么它的子类也会被加上透明度。
+     */
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="content"></div>
+        <div class="mark"></div>
+    </div>
+</body>
+</html>
