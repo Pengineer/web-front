@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>表格</title>
+    <!--
+        表格标签：
+            table 表格
+            thead 表格头
+            tbody 表格主体
+            tr    表格行
+            th    元素定义表头
+            td    元素定义表格单元
+    -->
+    <style type="text/css">
+        table {
+            border-collapse: collapse;  /*去掉表格单元格之间的间隙*/
+        }
+        th, td {
+            padding:0;  /*重置单元格默认填充*/
+            width: 200px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <table border="1px">
+        <thead>
+            <tr>
+                <th>周一</th>
+                <th>周二</th>
+                <th>周三</th>
+                <th>周四</th>
+                <th>周五</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>计算机网络</td>
+                <td></td>
+                <td>操作系统</td>
+                <td>数据库系统概念</td>
+                <td>数据结构</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br><br><br>
+
+    <!--单元格合并-->
+    <table border="1px">
+        <thead>
+            <tr>
+                <th colspan="2">周一</th>          <!--横向占两个单元格（本行单元格个数减1）-->
+                <th>周二</th>
+                <th>周三</th>
+                <th>周四</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">计算机网络</td>   <!--列向占两个单元格（下一行单元格个数减1）-->
+                <td></td>
+                <td>操作系统</td>
+                <td>数据库系统概念</td>
+                <td>数据结构</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>操作系统</td>
+                <td>数据库系统概念</td>
+                <td>数据结构</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
