@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>a伪列</title>
+    <style type="text/css">
+    /*
+        伪类：伪类用于向被选中元素添加特殊的效果。（元素在特定情况下才具备的。）
+            link     未访问（默认）
+            hover    鼠标悬停（鼠标滑过）
+            active   链接激活（鼠标按下）
+            visited  访问过后（点击过后）
+
+        a标签四个伪类的顺序：
+            link  visited  hover  active
+
+        a伪类的应用：
+            a,四个伪类全用（搜索引擎，新闻门户，小说网站）
+            b,一般网站只用（a{}  a:hover{}）
+
+        IE6不支持a以外其它任何标签的伪类；
+        IE6以上的浏览器支持所有标签的hover伪类。
+
+        另见：12_selector.html 的使用。
+     */
+
+    a:link{text-decoration:none;}
+    a:visited{color:blue;}
+    a:hover{color:black;}
+    a:active{color:red;}
+    </style>
+</head>
+<body>
+    <a href="#">链接</a>
+</body>
+</html>
