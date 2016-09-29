@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        li {list-style: none;}
+        .lis_class {width: 80px; height: 30px; border:1px solid #333; position: relative;}
+        .lis_class a {display: block; line-height: 30px; text-align: center; text-decoration: none; color: #000; background: #f1f1f1;}
+        ul ul {display:none; padding: 0; margin: 0; width:140px; border: 1px solid #333; position: absolute; top: 30px; left: -1px; background:#FF9;}
+        ul ul li {text-align: center; line-height: 30px;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li id="lis" class="lis_class">
+            <a id="link" href="#">微博</a>
+            <ul id="inner_ul">
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+    </ul>
+
+    <script type="text/javascript">
+    /*
+        事件：
+            鼠标事件    onclick  onmouseover  onmouseout onmousedown  onmouseup  onmousemove ......
+            键盘事件
+            系统事件    onload（window.onload  img.onload  body.onload）
+            表单事件
+            自定义事件
+
+        函数：
+            function f(){
+                ......
+            }
+            函数的执行：
+                （1）直接调用：f();
+                （2）事件调用：元素.事件 = 函数名     div.onclick = f;   //注意前后都不能有括号
+            匿名函数：function () {}
+                调用：元素.事件 = function () {};
+     */
+
+    window.onload = function () {
+        var oli = document.getElementById("lis");
+        var oul = document.getElementById("inner_ul");
+        var oa = document.getElementById("link");
+        oli.onmouseover = function () {
+            oa.style.background = 'yellow';
+            oul.style.display = 'block';
+        };
+        oli.onmouseout = function () {
+            oa.style.background = '#f1f1f1';
+            oul.style.display = 'none';
+        };
+    }
+    </script>
+</body>
+</html>

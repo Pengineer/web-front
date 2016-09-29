@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>practice</title>
+    <style type="text/css">
+        body{text-align: center;background:#E5E5E5;}
+        h1 { display: inline-block; }
+        #control{ width:100px; height: 42px; font:20px/30px "宋体"; font-weight: bold; color: red; }
+        #content { width:200px; height:200px; background-color: black; margin:100px auto;}
+        #layer{border: 1px solid #000; width:156px; height:330px; padding: 18px 18px; display:none; position: absolute; right: -240px;top:100px;}
+
+        .btn{width:46px; height:46px;color: #000; padding-left: 4px; font-size:18px;}
+        #r {background-color: red; }
+        #y {background-color:yellow;}
+        #b {background-color:blue;}
+        .layer_btn {width:70px; height:32px; background-color: #8C8C8C;}
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var oContent = document.getElementById("content");
+            var oCtrlBtn = document.getElementById("control");
+            var oR = document.getElementById("r");
+            var oY = document.getElementById("y");
+            var oB = document.getElementById("b");
+            var color = oContent.style.background;
+            var oLayer = document.getElementById("layer");
+            var ok = document.getElementById("ok");
+            var cancel = document.getElementById("cancel");
+            oCtrlBtn.onclick = function () {
+                oLayer.style.display = "block";
+            };
+            oR.onclick = function () {
+                oContent.style.background = "red";
+            };
+            oY.onclick = function () {
+                oContent.style.background = "yellow";
+            };
+            oB.onclick = function () {
+                oContent.style.background = "blue";
+            };
+            ok.onclick = function () {
+                oLayer.style.display = "none";
+            };
+            cancel.onclick = function () {
+                oContent.style.background = color;
+                oLayer.style.display = "none";
+            };
+        };
+    </script>
+</head>
+<body>
+    <div style="width:600px;height: 600px; border: 1px solid #333; margin:0px auto; position: relative;">
+        <div>
+            <h1>点击控制下面图片的变化：</h1>
+            <input type="button" id="control" value="控制"/>
+        </div>
+        <div id="content"></div>
+
+        <div id="layer">
+            <div id="bg">
+                <p style="font: 22px/10px '宋体';margin-top:0px">选择背景</p>
+                <input type="button" id = "r" class = "btn" value="红"/>
+                <input type="button" id = "y" class = "btn" value="黄"/>
+                <input type="button" id = "b" class = "btn" value="蓝"/>
+            </div>
+            <div id="wid">
+                <p style="font: 22px/10px '宋体'">选择宽度</p>
+                <input type="button" id = "w1" class = "btn" value="100"/>
+                <input type="button" id = "w2" class = "btn" value="200"/>
+                <input type="button" id = "w3" class = "btn" value="300"/>
+            </div>
+            <div id="hei">
+                <p style="font: 22px/10px '宋体'">选择高度</p>
+                <input type="button" id = "h1" class = "btn" value="100"/>
+                <input type="button" id = "h2" class = "btn" value="200"/>
+                <input type="button" id = "h3" class = "btn" value="300"/>
+            </div>
+            <hr/>
+            <div style="text-align: center; margin-bottom: 0px;">
+                <input type="button" id="cancel" class="layer_btn" value="恢复"/>
+                <input type="button" id="ok" class="layer_btn" value="确定"/>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
