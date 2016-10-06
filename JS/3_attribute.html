@@ -10,11 +10,25 @@
             元素内的HTML内容操作：innerHTML
 
             JS中不允许出现“-”，因此style.font-size需要写成驼峰式style.fontSize
+
+            动态加载样式：
+                class作为一类特殊的属性，在JS中调用时，需要转换成className
          */
+         window.onload = function () {
+            var btn = document.getElementById("btn");
+            var content = document.getElementById("content");
+            btn.onclick = function () {
+                content.className = 'red';
+            };
+         };
     </script>
+
+    <style type="text/css">
+        .red {width: 300px;background-color: red; padding: 20px; color: yellow; border: 10px solid #ccc;}
+    </style>
 </head>
 <body>
-
-    <div></div>
+    <input type="button" value="红色" id="btn">
+    <div id="content">class作为一类特殊的属性，在JS中调用时，需要转换成className</div>
 </body>
 </html>

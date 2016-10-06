@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>图片切换</title>
+    <style type="text/css">
+        #content {
+            width:300px; height:168px;
+            position: relative;
+        }
+        #content a {
+            width:30px; height:30px; background: #000; opacity: 0.3;
+            border: 5px solid #fff;
+            position: absolute; top: 69px;
+            /*text-align只能控制水平居中。行高与height一致，可以使文字上下居中*/
+            text-align: center; text-decoration: none; font-weight: bold; font-size: 20px; line-height: 30px; color: #fff;
+        }
+        #content a:hover {
+            opacity:0.5;
+        }
+        #prev {
+            left:5px;
+        }
+        #next {
+            right:5px;
+        }
+        #img1 {
+            width:300px; height:168px;
+        }
+        #span1, #text {
+            width:300px; height: 20px; background:#000; opacity:0.5; color: #fff;
+            position:absolute; left: 0px;
+            text-align: center; line-height: 20px;
+        }
+        #span1 {
+            top: 0px;
+        }
+        #text {
+            margin: 0;
+            bottom: 0px;
+        }
+    </style>
+    <script type="text/javascript">
+        // 全局变量和局部变量，以方法块来区分
+
+        window.onload = function () {
+            var oPrev = document.getElementById("prev");
+            var oNext = document.getElementById("next");
+            var oImg1 = document.getElementById("img1");
+            var oSpan1 = document.getElementById("span1");
+            var oText = document.getElementById("text");
+
+            var arrURL = ["../CSS/image/1.jpg", "../CSS/image/2.jpg", "../CSS/image/3.jpg", "../CSS/image/4.jpg"];
+            var arrText = ["春", "夏", "秋", "冬"];
+
+            var seq = 0;
+            loadImg(seq);
+            oNext.onclick = function () {
+                seq++;
+                if(seq >= 4){
+                    seq = 3;
+                    alert("这是最后一张");
+                }
+                loadImg(seq);
+            };
+            oPrev.onclick = function () {
+                seq--;
+                if(seq <= -1) {
+                    seq = 0;
+                    alert("这是第一张");
+                }
+                loadImg(seq);
+            };
+            function loadImg(seq) {
+                oImg1.src=arrURL[seq];
+                oSpan1.innerHTML = (seq+1) + " / " + arrURL.length;
+                oText.innerHTML = arrText[seq];
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="content">
+        <a id="prev" href="javascript:;"><</a>
+        <a id="next" href="javascript:;">></a>
+        <img id="img1" src="../CSS/image/load.jpg" />
+        <span id="span1">图片数量加载中...</span>
+        <p id="text">图片文字加载中...</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>控制语句</title>
+    <!--
+        注意事项：（兼容性问题）
+            1，所有的相对路径不能用来作为判断条件。img.src  a.href
+            2，颜色值不能用来作为判断条件。red #ccc rgb(0,0,0)
+            3，innerHTML不能拿来作为判断。
+
+        JS获取属性和方法的两种方式：. 和 []
+    -->
+    <script>
+        window.onload = function () {
+            var ot1 = document.getElementById("txt1");
+            var ot2 = document.getElementById("txt2");
+            var btn = document.getElementById("btn");
+            var box = document.getElementById("box");
+            btn.onclick = function () {
+                //box.style.width = ot2.value;           //.后面的值无法修改
+                box.style[ot1.value] = ot2.value;        //[]里面的值可以随便写，document.getElementById -> document['getElementById']
+            };
+        };
+
+        //JS中数组
+        var arr1 = new Array();
+        //数组添加元素
+        arr1.push("abc");
+        alert(arr1);
+
+        var arr2 = [3,5,7,3,8,1];
+        //数组逆序
+        arr2.reverse();  // arr2直接被修改
+        alert(arr2);
+        //sort(orderfunction)：按指定的参数对数组进行排序
+        arr2.sort();
+        alert(arr2);
+        //slice(start,end)：返回从原数组中指定开始下标到结束下标之间的项组成的新数组
+        var b = arr2.slice(2,5);
+        alert(b);
+        //join(separator)：将数组的元素组起一个字符串，以separator为分隔符，省略的话则用默认用逗号为分隔符
+        var str = arr2.join("|");
+        alert(str);
+    </script>
+</head>
+<body>
+    <input type="text" id="txt1" /><br/>
+    <input type="text" id="txt2" /><br/>
+    <input type="button" id="btn" value="确定" />
+    <div id="box" style="border:1px solid red;width:50px;height:50px;"></div>
+</body>
+</html>
