@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>this关键字</title>
+  </head>
+  <body>
+    <input type="button" id="btn" value="按钮1" />
+    <input type="button" id="btn2" onclick="alert(this);" value="按钮2" /> <!--此种方式的alert只在input标签内有效，因此输出object HTMLInputElement-->
+    <input type="button" id="btn3" onclick="f1();" value="按钮3" />        <!--object Window-->
+    <input type="button" id="btn4" onclick="f1(this);" value="按钮4" />    <!--此处this表示input标签，输出object HTMLInputElement-->
+    <script>
+      /*
+        this：指的是调用函数（方法） 的那个对象
+      */
+
+      // alert() == window.alert()
+      // alert(this); // object Window
+      function f(obj) {
+        alert(obj);
+      }
+      function f1() {
+          alert(this);
+      }
+      // f1(); // 等价于window.f()，因此输出object Window
+      function f2() {
+        f1();
+      }
+      // f2(); // object Window
+      var oBtn = document.getElementById("btn");
+      // oBtn.onclick = f1; // object HTMLInputElement （ERROR：oBtn.onclick=f1(); 小括号就表示调用，HTML会将f1的结果赋值给前面的变量）
+      /*
+      oBtn.onclick = function () {
+        alert(this);  // this表示input标签，object HTMLInputElement
+        f1();      // object Window
+      };
+      */
+    </script>
+  </body>
+</html>

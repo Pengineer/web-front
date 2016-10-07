@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>note</title>
+    <style>
+      #box {
+        width:100px;height:100px;border:1px dotted red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
+
+    <hr>
+    
+    <input type="button" id='btn' value="BUTTON" />
+
+
+    <script>
+      // 修改行间样式
+      var oDiv = document.getElementById('box');
+      oDiv.onclick = function () {
+        // oDiv.style.width = '200px';
+        oDiv.style.cssText = "width:200px;height:200px;" /* NOTE：cssText的使用 */
+      };
+
+      // 禁用按钮
+      var oBtn = document.getElementById('btn');
+      oBtn.onclick = function () {
+        oBtn.disabled=true;
+        alert('禁用按钮');
+      };
+    </script>
+  </body>
+</html>
