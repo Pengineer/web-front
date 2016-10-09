@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>图片切换</title>
+    <style>
+      body {background: #333}
+      #pic {width:300px; height:168px; position:relative; margin:0 auto; background:url('../CSS/image/load.jpg') no-repeat center #fff;}
+      #pic img {width:300px; height:168px;}
+      #pic span {width:300px; height:30px; position:absolute; top:0; left:0; text-align:center;line-height:30px;}
+      #pic p {width:300px; height:30px; position:absolute; left:0; bottom:0; text-align:center; line-height:30px; margin:0px;}
+      #pic ul {width:30px; position:absolute; top:0; right:-50px;}
+      #pic li {width:30px; height:30px; margin-bottom:4px; background:#666; list-style:none;}
+    </style>
+
+    <script>
+      window.onload=function () {
+        var oDiv = document.getElementById('pic');
+        var oImg = document.getElementsByTagName('img')[0];
+        var oSpan = document.getElementsByTagName('span')[0];
+        var oP = document.getElementsByTagName('p')[0];
+        var oUl = document.getElementsByTagName('ul')[0];
+
+        var aLi = oUl.getElementsByTagName('li');
+
+        var arrURL = ["../CSS/image/1.jpg", "../CSS/image/2.jpg", "../CSS/image/3.jpg", "../CSS/image/4.jpg"];
+        var arrText = ["春", "夏", "秋", "冬"];
+
+        var len = arrURL.length;
+        for(var i=0; i<len; i++) {
+          oUl.innerHTML += '<li></li>';
+        }
+
+        //初始化
+        oImg.src=arrURL[0];
+        oSpan.innerHTML=1 + " / " + len;
+        oP.innerHTML=arrText[0];
+        aLi[0].style.background='yellow';
+
+        var oldLi = 0;
+        for(var j=0; j<len; j++) {
+          aLi[j].index=j; // 自定义属性
+          aLi[j].onclick=function () {
+            oImg.src=arrURL[this.index];
+            oSpan.innerHTML=(this.index+1) + " / " + len;
+            oP.innerHTML=arrText[this.index];
+
+            aLi[oldLi].style="";
+            oldLi = this.index;
+            this.style.background='yellow';
+          };
+        }
+
+      }
+    </script>
+  </head>
+  <body>
+    <div id="pic">
+      <img src="" />
+      <span>数量加载中....</span>
+      <p>文字加载中....</p>
+      <ul></ul>
+    </div>
+  </body>
+</html>

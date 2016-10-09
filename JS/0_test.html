@@ -3,23 +3,37 @@
 <head>
     <meta charset="utf-8">
     <title>测试</title>
+    <style>
+      .r1 {width:100px;height:100px;display：inline-block;}
+      .r2 {width:100px;height:100px;float:left;}
+    </style>
     <script>
-    var a =1;
-    function test(){
-        var a;     //局部变量a在这行声明
-        alert(a); //a为undefined! 这个a并不是全局变量，这是因为在function scope里已经声明了（函数体倒数第4行）一个重名的局部变量,
-                     //所以全局变量a被覆盖了，这说明了Javascript在执行前会对整个脚本文件的定义部分做完整分析,所以在函数test()执行前,
-                     //函数体中的变量a就被指向内部的局部变量.而不是指向外部的全局变量. 但这时a只有声明，还没赋值，所以输出undefined。
-        a=4
-        alert(a);  //a为4,没悬念了吧？ 这里的a还是局部变量哦！
+    // var a =1;
+    // function test(){
+    //     var a;     //局部变量a在这行声明
+    //     alert(a); //a为undefined! 这个a并不是全局变量，这是因为在function scope里已经声明了（函数体倒数第4行）一个重名的局部变量,
+    //                  //所以全局变量a被覆盖了，这说明了Javascript在执行前会对整个脚本文件的定义部分做完整分析,所以在函数test()执行前,
+    //                  //函数体中的变量a就被指向内部的局部变量.而不是指向外部的全局变量. 但这时a只有声明，还没赋值，所以输出undefined。
+    //     a=4
+    //     alert(a);  //a为4,没悬念了吧？ 这里的a还是局部变量哦！
+    //
+    //     alert(a);  //a还是为4,这是因为之前已把4赋给a了
+    // }
+    // test();
+    // alert(a); //a为1，这里并不在function scope内，a的值为全局变量的值
 
-        alert(a);  //a还是为4,这是因为之前已把4赋给a了
-    }
-    test();
-    alert(a); //a为1，这里并不在function scope内，a的值为全局变量的值
-</script>
+      window.onload=function () {
+        var oUl = document.getElementById('ul');
+        var aLi = oUl.getElementsByTagName("li");  // 动态的方法，oUL变化时，该方法重新执行
+
+        for(var i=0; i<3; i++) {
+          oUl.innerHTML+='<li></li>';
+        }
+        alert(aLi.length);
+      };
+    </script>
 </head>
 <body>
-
+  <ul id="ul"></ul>
 </body>
 </html>
