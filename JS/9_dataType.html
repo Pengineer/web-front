@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JS数据类型</title>
+    <script>
+      /*
+        ECMAScript：标准、核心
+        HTML标签类型：block、inline、inline-block、table......
+        JS中的数据类型：数字、字符串、布尔、函数、对象（obj、[]、{}、null）、未定义
+        typeof判断数据类型
+        NaN：程序中有非法的运算操作，在if条件判断时它是false。
+        isNaN():判断某个值是不是数字，不是-true，是-false。（内部通过Number()方法转换后再判断的，因此'2'也是false）
+        HTML中拿到的内容都是字符串，input.value
+      */
+
+      // 字符串转数字
+      // var str1 = '100';
+      // alert(str1 + 100); // 100100
+      // alert(Number(str1) + 100); // 200
+      // var str2 = '';
+      // alert(Number(str2)); // 0
+      // var str3 = ' ';
+      // alert(Number(str3)); // 0
+      // var str4 = null;
+      // alert(Number(str4)); // 0
+      // var str5;
+      // alert(typeof str5);  // undefined
+      // alert(Number(str5)); // NaN
+
+      // parseInt 字符串转数字，从左往右开始遍历，碰到数字就转换，碰到非数字就停止，开头必须是数字或者+-空格。
+      // alert(parseInt('200px'));  // 200
+      // alert(parseInt('+200px')); // 200
+      // alert(parseInt(' 200px')); // 200
+      // alert(parseInt('200px200')); // 200
+      // alert(parseInt('a12'));      // NaN
+      // alert(parseInt('12.34元'));  // 12
+      // alert(parseFloat('12.34元')); // 12.34
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
