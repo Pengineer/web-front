@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JS作用域</title>
+    <script>
+      /*
+        JS中的作用域：
+          script：全局变量，全局函数
+              自上而下
+          函数：局部
+              由里到外
+          {}
+
+        浏览器：
+          JS解析器
+            （1）JS预解析：var function 参数
+                a = 未定义
+                  所有的变量，在正式运行代码之前，都提前赋了一个值：未定义（undefined）
+                fn1 = function fn1() {alert(1);}
+                  所有的函数，在正式运行代码之前，都是整个函数块
+
+                遇到重名的：只留一个
+                  函数的优先级大于变量，即变量和函数重名了，就只留下函数；同级重名，留最后一个。
+            （2）逐行解读代码：
+                表达式：= + - * / % ++ -- ! 参数.......
+                表达式可以修改预解析的值。
+                函数调用：
+                  （1）预解析
+                  （2）逐行解读代码
+      */
+
+      // alert(a); // 能输出undefined：预解析阶段，浏览器的JS解析器会获取变量a，但是不会给a赋等号后的值，而是一个undefined
+      // var a = 1;
+      // alert(a);// 1
+
+      // alert(b); // 无法输出，报错not undefined：因为变量b没有var声明，JS预解析阶段无法加载，
+      // b=1;
+
+      // 预加载相关面试题
+      // alert(c);  // function c() {alert(4);}  预加载结束后c的值
+      // var c = 1;
+      // alert(c);  // 1
+      // function c() {alert(2);}
+      // alert(c);  // 1 上面一行函数不是表达式，在代码解读阶段不会改变c的值
+      // var c = 3;
+      // alert(c);  // 3
+      // function c() {alert(4);}
+      // alert(c); // 3
+      // c();      // 程序报错，等价于3();
+
+      // 作用域问题
+      // var d = 1;
+      // function fn1() {
+      //   alert(d); // 输出undefined：函数里面的d与函数外面的d相互隔离，函数里的预解析阶段d的值为undefined
+      //   var d = 2;
+      // }
+      // fn1();
+      // alert(d); // 1
+
+      // 作用域链
+      var e = 1;
+      function fn1() {
+        alert(e); // 输出1 函数内预解析时没有变量e的声明，因此会到上一级作用域里面查找
+        e = 2;
+      }
+      fn1();
+      alert(e); // 2
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
