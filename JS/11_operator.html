@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JS运算符</title>
+    <script>
+      /*
+      运算符
+        算术：+ 加、-减、*乘、/ 除、% 取模（有余数）
+        赋值：=、+=、-=、*=、/=、%=
+        关系：<、>、<=、>=、==、!=、===、!==
+        逻辑：&&与、||或、!否
+        运算符优先级：括号
+
+      程序流程控制
+        判断：if、switch（case break default）、?:
+        循环：while、for
+        跳出：break、continue
+
+      JS中的真假问题：
+        真：非0的数字，非空字符串，true，函数，能找到的元素，[]，{}
+        假：0，NaN，空字符串''，false，不能找到的元素，null，未定义
+      */
+
+      window.onload = function () {
+         var oBtn = document.getElementById("btn");
+         var oDiv = document.getElementById("content");
+         oBtn.onclick = function () {
+          //  oDiv.style.background='blue';
+          alert(oDiv.style.width); // 只能获取行间样式，无法获取样式表中的样式。因此输出为空 。（可以使用oDiv.style.cssText='width:350px'来设置行间样式）
+         };
+      };
+    </script>
+
+    <style>
+      #content {
+        width:200px;height:200px;background:red;
+      }
+    </style>
+  </head>
+  <body>
+      <input type="button" id ="btn" value="控制">
+      <div id="content"></div>
+  </body>
+</html>
